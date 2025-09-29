@@ -49,8 +49,8 @@ if __name__ == "__main__":
             nb_ordi = int(input("Combien d'ordinateurs voulez-vous vérifier ? "))
             if nb_ordi <= 0:
                 print("Entrez un entier positif.")
-                continue
-            break
+            else:
+                break
         except ValueError:
             print("Veuillez entrer un entier valide.")
 
@@ -92,7 +92,7 @@ if __name__ == "__main__":
         ls_humidites.append(humidite)
 
     #Pour nombre d'ordi
-    for i in range(nb_ordi):
+    for i in range(len(ls_temperatures)):
         #Vérifier l'environnement : utiliser la fonction et afficher le résultat
         print(f"Résultat pour l'ordinateur {i + 1}")
         print(environnement_optimal(ls_temperatures[i], ls_poussiere[i], ls_humidites[i]))
